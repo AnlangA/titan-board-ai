@@ -1,0 +1,8 @@
+[submodule "ruhmi"]
+	path = ruhmi
+	url = https://github.com/AnlangA/ruhmi.git
+	branch = main
+[submodule "titan_board_minist"]
+	path = titan_board_minist
+	url = https://github.com/AnlangA/titan_board_minist.git
+	branch = main
