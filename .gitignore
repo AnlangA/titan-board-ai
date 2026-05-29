@@ -1,5 +1,6 @@
 **\.vscode
-**__pycache__
+**/__pycache__
+**/.sconsign.dblite
 **/packages.dbsqlite
 **/.config.old
 /libraries/*.o

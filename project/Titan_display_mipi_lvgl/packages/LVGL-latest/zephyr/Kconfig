@@ -1,3 +1,0 @@
-if LVGL
-source "../Kconfig"
-endif
