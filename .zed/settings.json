@@ -1,0 +1,28 @@
+{
+  "lsp": {
+    "clangd": {
+      "arguments": [
+        "--background-index",
+        "--clang-tidy=false",
+        "--header-insertion=never",
+        "--function-arg-placeholders=false",
+        "--completion-style=detailed",
+      ],
+    },
+  },
+  "languages": {
+    "C": {
+      "tab_size": 4,
+      "hard_tabs": false,
+    },
+    "C++": {
+      "tab_size": 4,
+      "hard_tabs": false,
+    },
+  },
+  "file_scan_exclusions": [
+    "titan_board_minist/build/**",
+    "**/.git/**",
+    "titan_board_minist/.sconsign.dblite",
+  ],
+}

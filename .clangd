@@ -1,0 +1,67 @@
+CompileFlags:
+  Add:
+    # ARM Cortex-M85
+    - -march=armv8.1-m.main+mve.fp+fp.dp
+    - -mthumb
+    - -mfpu=fpv5-sp-d16
+    - -mfloat-abi=hard
+    - -Dgcc
+    - -D__RTTHREAD__
+    - -D_RENESAS_RA_
+    - -D_RA_CORE=0
+    - -DRT_USING_LIBC
+    - -DRT_USING_NEWLIBC
+    # Force-include RT-Thread pre-include header
+    - -include
+    - titan_board_minist/rtconfig_preinc.h
+    # RT-Thread core
+    - -Ititan_board_minist/rt-thread/include
+    - -Ititan_board_minist/rt-thread/libcpu/arm/common
+    - -Ititan_board_minist/rt-thread/libcpu/arm/cortex-m85
+    # RT-Thread components
+    - -Ititan_board_minist/rt-thread/components/drivers/include
+    - -Ititan_board_minist/rt-thread/components/finsh
+    - -Ititan_board_minist/rt-thread/components/libc/compilers/common/include
+    - -Ititan_board_minist/rt-thread/components/libc/compilers/newlib
+    - -Ititan_board_minist/rt-thread/components/libc/posix/io/epoll
+    - -Ititan_board_minist/rt-thread/components/libc/posix/io/eventfd
+    - -Ititan_board_minist/rt-thread/components/libc/posix/io/poll
+    - -Ititan_board_minist/rt-thread/components/libc/posix/ipc
+    # Board
+    - -Ititan_board_minist/src
+    - -Ititan_board_minist/board
+    - -Ititan_board_minist/board/ports
+    - -Ititan_board_minist/board/ports/wifi
+    # Generated config
+    - -Ititan_board_minist/ra_cfg/fsp_cfg
+    - -Ititan_board_minist/ra_cfg/fsp_cfg/bsp
+    - -Ititan_board_minist/ra_gen
+    # Libraries
+    - -Ititan_board_minist/libraries/HAL_Drivers
+    - -Ititan_board_minist/libraries/HAL_Drivers/config
+    # Renesas FSP
+    - -Ititan_board_minist/ra/fsp/inc
+    - -Ititan_board_minist/ra/fsp/inc/api
+    - -Ititan_board_minist/ra/fsp/inc/instances
+    - -Ititan_board_minist/ra/fsp/src/r_mipi_csi
+    - -Ititan_board_minist/ra/fsp/src/r_vin
+    - -Ititan_board_minist/ra/fsp/src/rm_ethosu
+    # CMSIS
+    - -Ititan_board_minist/ra/arm/CMSIS_6/CMSIS/Core/Include
+    - -Ititan_board_minist/ra/arm/CMSIS_6/CMSIS/Core/Include/m-profile
+    # Additional drivers
+    - -Ititan_board_minist/ra/npu/ethos-u-core-driver/include
+    - -Ititan_board_minist/ra/tes/dave2d/inc
+  Compiler: /usr/bin/arm-none-eabi-gcc
+  Remove:
+    - -ffunction-sections
+    - -fdata-sections
+    - -gdwarf-2
+    - -O0
+    - -g
+    - -Wall
+Diagnostics:
+  Suppress:
+    - unused-function
+    - unused-variable
+    - unused-parameter
