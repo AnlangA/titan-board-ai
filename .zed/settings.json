@@ -1,28 +1,41 @@
 {
   "lsp": {
     "clangd": {
-      "arguments": [
-        "--background-index",
-        "--clang-tidy=false",
-        "--header-insertion=never",
-        "--function-arg-placeholders=false",
-        "--completion-style=detailed",
-      ],
+      "binary": {
+        "path": "/home/a/.local/bin/clangd",
+        "arguments": [
+          "--background-index",
+          "--clang-tidy=false",
+          "--header-insertion=never",
+          "--function-arg-placeholders=false",
+          "--completion-style=detailed",
+          "--all-scopes-completion",
+          "--cross-file-rename",
+          "--pch-storage=memory",
+          "-j=8",
+          "--query-driver=/usr/bin/arm-none-eabi-*",
+          "--enable-config",
+          "--log=error",
+        ],
+      },
     },
   },
   "languages": {
     "C": {
       "tab_size": 4,
       "hard_tabs": false,
+      "format_on_save": "off",
     },
     "C++": {
       "tab_size": 4,
       "hard_tabs": false,
+      "format_on_save": "off",
     },
   },
   "file_scan_exclusions": [
     "titan_board_minist/build/**",
     "**/.git/**",
     "titan_board_minist/.sconsign.dblite",
+    "**/__pycache__/**",
   ],
 }

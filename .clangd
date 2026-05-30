@@ -1,6 +1,7 @@
 CompileFlags:
   Add:
-    # ARM Cortex-M85
+    - -xc
+    - -I/home/a/workspace/minist/titan_board_minist
     - -march=armv8.1-m.main+mve.fp+fp.dp
     - -mthumb
     - -mfpu=fpv5-sp-d16
@@ -11,47 +12,40 @@ CompileFlags:
     - -D_RA_CORE=0
     - -DRT_USING_LIBC
     - -DRT_USING_NEWLIBC
-    # Force-include RT-Thread pre-include header
     - -include
-    - titan_board_minist/rtconfig_preinc.h
-    # RT-Thread core
-    - -Ititan_board_minist/rt-thread/include
-    - -Ititan_board_minist/rt-thread/libcpu/arm/common
-    - -Ititan_board_minist/rt-thread/libcpu/arm/cortex-m85
-    # RT-Thread components
-    - -Ititan_board_minist/rt-thread/components/drivers/include
-    - -Ititan_board_minist/rt-thread/components/finsh
-    - -Ititan_board_minist/rt-thread/components/libc/compilers/common/include
-    - -Ititan_board_minist/rt-thread/components/libc/compilers/newlib
-    - -Ititan_board_minist/rt-thread/components/libc/posix/io/epoll
-    - -Ititan_board_minist/rt-thread/components/libc/posix/io/eventfd
-    - -Ititan_board_minist/rt-thread/components/libc/posix/io/poll
-    - -Ititan_board_minist/rt-thread/components/libc/posix/ipc
-    # Board
-    - -Ititan_board_minist/src
-    - -Ititan_board_minist/board
-    - -Ititan_board_minist/board/ports
-    - -Ititan_board_minist/board/ports/wifi
-    # Generated config
-    - -Ititan_board_minist/ra_cfg/fsp_cfg
-    - -Ititan_board_minist/ra_cfg/fsp_cfg/bsp
-    - -Ititan_board_minist/ra_gen
-    # Libraries
-    - -Ititan_board_minist/libraries/HAL_Drivers
-    - -Ititan_board_minist/libraries/HAL_Drivers/config
-    # Renesas FSP
-    - -Ititan_board_minist/ra/fsp/inc
-    - -Ititan_board_minist/ra/fsp/inc/api
-    - -Ititan_board_minist/ra/fsp/inc/instances
-    - -Ititan_board_minist/ra/fsp/src/r_mipi_csi
-    - -Ititan_board_minist/ra/fsp/src/r_vin
-    - -Ititan_board_minist/ra/fsp/src/rm_ethosu
-    # CMSIS
-    - -Ititan_board_minist/ra/arm/CMSIS_6/CMSIS/Core/Include
-    - -Ititan_board_minist/ra/arm/CMSIS_6/CMSIS/Core/Include/m-profile
-    # Additional drivers
-    - -Ititan_board_minist/ra/npu/ethos-u-core-driver/include
-    - -Ititan_board_minist/ra/tes/dave2d/inc
+    - /home/a/workspace/minist/titan_board_minist/rtconfig_preinc.h
+    - -I/home/a/workspace/minist/titan_board_minist/rt-thread/include
+    - -I/home/a/workspace/minist/titan_board_minist/rt-thread/libcpu/arm/common
+    - -I/home/a/workspace/minist/titan_board_minist/rt-thread/libcpu/arm/cortex-m85
+    - -I/home/a/workspace/minist/titan_board_minist/rt-thread/components/drivers/include
+    - -I/home/a/workspace/minist/titan_board_minist/rt-thread/components/finsh
+    - -I/home/a/workspace/minist/titan_board_minist/rt-thread/components/libc/compilers/common/include
+    - -I/home/a/workspace/minist/titan_board_minist/rt-thread/components/libc/compilers/newlib
+    - -I/home/a/workspace/minist/titan_board_minist/rt-thread/components/libc/posix/io/epoll
+    - -I/home/a/workspace/minist/titan_board_minist/rt-thread/components/libc/posix/io/eventfd
+    - -I/home/a/workspace/minist/titan_board_minist/rt-thread/components/libc/posix/io/poll
+    - -I/home/a/workspace/minist/titan_board_minist/rt-thread/components/libc/posix/ipc
+    - -I/home/a/workspace/minist/titan_board_minist/src
+    - -I/home/a/workspace/minist/titan_board_minist/board
+    - -I/home/a/workspace/minist/titan_board_minist/board/ports
+    - -I/home/a/workspace/minist/titan_board_minist/board/ports/wifi
+    - -I/home/a/workspace/minist/titan_board_minist/ra_cfg/fsp_cfg
+    - -I/home/a/workspace/minist/titan_board_minist/ra_cfg/fsp_cfg/bsp
+    - -I/home/a/workspace/minist/titan_board_minist/ra_gen
+    - -I/home/a/workspace/minist/titan_board_minist/libraries/HAL_Drivers
+    - -I/home/a/workspace/minist/titan_board_minist/libraries/HAL_Drivers/config
+    - -I/home/a/workspace/minist/titan_board_minist/ra/fsp/inc
+    - -I/home/a/workspace/minist/titan_board_minist/ra/fsp/inc/api
+    - -I/home/a/workspace/minist/titan_board_minist/ra/fsp/inc/instances
+    - -I/home/a/workspace/minist/titan_board_minist/ra/fsp/src/r_mipi_csi
+    - -I/home/a/workspace/minist/titan_board_minist/ra/fsp/src/r_vin
+    - -I/home/a/workspace/minist/titan_board_minist/ra/fsp/src/rm_ethosu
+    - -I/home/a/workspace/minist/titan_board_minist/ra/arm/CMSIS_6/CMSIS/Core/Include
+    - -I/home/a/workspace/minist/titan_board_minist/ra/arm/CMSIS_6/CMSIS/Core/Include/m-profile
+    - -I/home/a/workspace/minist/titan_board_minist/ra/npu/ethos-u-core-driver/include
+    - -I/home/a/workspace/minist/titan_board_minist/ra/tes/dave2d/inc
+    - -I/home/a/workspace/minist/titan_board_minist/board/lvgl
+    - -I/home/a/workspace/minist/titan_board_minist/board/lvgl/arm-2d/Include
   Compiler: /usr/bin/arm-none-eabi-gcc
   Remove:
     - -ffunction-sections
@@ -65,3 +59,4 @@ Diagnostics:
     - unused-function
     - unused-variable
     - unused-parameter
+    - pp_file_not_found
